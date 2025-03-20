@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            width: 300px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357abd;
+        }
+
+        .upload-form {
+            border-top: 4px solid #4a90e2;
+        }
+
+        .fetch-form {
+            border-top: 4px solid #2ecc71;
+        }
+
+        input[type="submit"][name="submit"]:nth-child(2) {
+            background-color: #2ecc71;
+        }
+
+        input[type="submit"][name="submit"]:nth-child(2):hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+<form action="upload.php" method="post" enctype="multipart/form-data" class="upload-form">
+    <input type="file" name="file">
+    <input type="submit" name="submit" value="Upload">
+</form>
+
+<form action="fetch.php" method="post" class="fetch-form">
+    <input type="submit" name="submit" value="Fetch">
+</form>
+</body>
+</html>
